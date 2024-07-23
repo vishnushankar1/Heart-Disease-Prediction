@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heart Disease Prediction</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h2 class="text-center">Heart Disease Prediction</h2>
+      <form action="/predict" method="POST" class="mt-4">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="age">Age</label>
+            <input type="number" class="form-control" name="age" required />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="sex">Sex</label>
+            <input type="number" class="form-control" name="sex" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="cp">Chest Pain Type</label>
+            <input type="number" class="form-control" name="cp" required />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="trestbps">Resting Blood Pressure</label>
+            <input
+              type="number"
+              class="form-control"
+              name="trestbps"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="chol">Serum Cholesterol in mg/dl</label>
+            <input type="number" class="form-control" name="chol" required />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="fbs">Fasting Blood Sugar > 120 mg/dl</label>
+            <input type="number" class="form-control" name="fbs" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="restecg">Resting Electrocardiographic Results</label>
+            <input type="number" class="form-control" name="restecg" required />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="thalach">Maximum Heart Rate Achieved</label>
+            <input type="number" class="form-control" name="thalach" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="exang">Exercise Induced Angina</label>
+            <input type="number" class="form-control" name="exang" required />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="oldpeak">ST Depression Induced by Exercise</label>
+            <input type="number" class="form-control" name="oldpeak" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="slope">Slope of the Peak Exercise ST Segment</label>
+            <input type="number" class="form-control" name="slope" required />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="ca"
+              >Number of Major Vessels Colored by Fluoroscopy</label
+            >
+            <input type="number" class="form-control" name="ca" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="thal">Thal</label>
+          <input type="number" class="form-control" name="thal" required />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Predict</button>
+      </form>
+      <h3 class="text-center mt-4">{{ prediction_text }}</h3>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
