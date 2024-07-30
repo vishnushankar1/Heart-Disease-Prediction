@@ -4,16 +4,74 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Heart Disease Prediction</title>
-    <!-- Bootstrap CSS -->
     <link
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
       rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     />
+    <style>
+      body {
+        background-color: #f2f2f2;
+      }
+      .container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .form-row {
+        margin-bottom: 20px;
+      }
+      .form-group {
+        margin-bottom: 20px;
+      }
+      label {
+        font-weight: bold;
+      }
+      input[type="number"] {
+        width: 100%;
+        height: 40px;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      select {
+        width: 100%;
+        height: 40px;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .btn {
+        width: 100%;
+        height: 40px;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: #4caf50;
+        color: #fff;
+        cursor: pointer;
+      }
+      .btn:hover {
+        background-color: #3e8e41;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .mt-4 {
+        margin-top: 40px;
+      }
+    </style>
   </head>
   <body>
-    <div class="container mt-5">
+    <div class="container">
       <h2 class="text-center">Heart Disease Prediction</h2>
-      <form action="/predict" method="POST" class="mt-4">
+      <form action="/predict" method="POST">
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="age">Age</label>
@@ -21,13 +79,23 @@
           </div>
           <div class="form-group col-md-6">
             <label for="sex">Sex</label>
-            <input type="number" class="form-control" name="sex" required />
+            <select class="form-control" name="sex" required>
+              <option value="">Select</option>
+              <option value="0">Female</option>
+              <option value="1">Male</option>
+            </select>
           </div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="cp">Chest Pain Type</label>
-            <input type="number" class="form-control" name="cp" required />
+            <select class="form-control" name="cp" required>
+              <option value="">Select</option>
+              <option value="1">Typical Angina</option>
+              <option value="2">Atypical Angina</option>
+              <option value="3">Non-Anginal Pain</option>
+              <option value="4">Asymptomatic</option>
+            </select>
           </div>
           <div class="form-group col-md-6">
             <label for="trestbps">Resting Blood Pressure</label>
@@ -46,9 +114,14 @@
           </div>
           <div class="form-group col-md-6">
             <label for="fbs">Fasting Blood Sugar > 120 mg/dl</label>
-            <input type="number" class="form-control" name="fbs" required />
+            <select class="form-control" name="fbs" required>
+              <option value="">Select</option>
+              <option value="0">False</option>
+              <option value="1">True</option>
+            </select>
           </div>
         </div>
+
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="restecg">Resting Electrocardiographic Results</label>

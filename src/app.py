@@ -5,8 +5,8 @@ import numpy as np
 app = Flask(__name__)
 
 # Load the model and scaler
-model = pickle.load(open('../models/heart_disease_model.pkl', 'rb'))
-scaler = pickle.load(open('../models/scaler.pkl', 'rb'))
+model = pickle.load(open('models/heart_disease_model.pkl', 'rb'))
+scaler = pickle.load(open('models/scaler.pkl', 'rb'))
 
 @app.route('/')
 def home():
