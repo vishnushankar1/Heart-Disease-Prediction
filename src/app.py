@@ -8,6 +8,7 @@ app = Flask(__name__)
 model = pickle.load(open('models/heart_disease_model.pkl', 'rb'))
 scaler = pickle.load(open('models/scaler.pkl', 'rb'))
 
+
 @app.route('/')
 def home():
     return render_template('index.html')
